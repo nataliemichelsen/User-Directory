@@ -1,5 +1,7 @@
 # User-Directory
 
+**To see this site live on Heroku, click [here]().**
+
 ## **Table of Contents**
 
 * Project Description
@@ -14,6 +16,8 @@
 * Video of Deployed Application
 
 ## ❔ **Description**
+
+A basic user directory that stores employee info in a searchable database. This database is imported from a third-party source.
 
 ## 💡 **Assignment Instructions**
 
