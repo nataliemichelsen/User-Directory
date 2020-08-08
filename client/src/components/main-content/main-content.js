@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import API from '../../util/api';
+
 import Nav from '../nav/nav';
 import Row from '../row/row';
 import Column from '../column/column';
