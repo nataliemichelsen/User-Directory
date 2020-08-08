@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function Container() {
-    return (
-
-    )
+  return <div className="container">{props.children}</div>;
 }
 
 export default Container;
