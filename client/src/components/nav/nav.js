@@ -27,14 +27,14 @@ function Nav(props) {
 
       <div className="dropdown">
         <button
-          className="btn btn-secondary"
+          className="dropdown-button btn-secondary"
           type="button"
           id="menu-button"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
         >
-          <p id="sortBtn">
+          <p id="sort-button">
               Sort
           </p>
           <i className="fas fa-angle-up" id="arrow"></i>
