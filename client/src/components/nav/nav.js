@@ -21,7 +21,7 @@ function Nav(props) {
           type="search"
           placeholder="Search"
           aria-label="Search"
-          onChange={}
+          onChange={props.submit}
         />
       </form>
 
@@ -44,19 +44,19 @@ function Nav(props) {
           className="dropdown-menu dropdown-menu-right"
           aria-labelledby="menu-button"
         >
-          <button className="dropdown-item" onClick={}>
+          <button className="dropdown-item" onClick={props.dropdownFunc}>
             Sort By Default
           </button>
 
           <div className="dropdown-divider"></div>
 
-          <button className="dropdown-item" onClick={}>
+          <button className="dropdown-item" onClick={props.dropdownFunc}>
             Sort By Name
           </button>
 
           <div className="dropdown-divider"></div>
 
-          <button className="dropdown-item" onClick={}>
+          <button className="dropdown-item" onClick={props.dropdownFunc}>
             Sort By Age
           </button>
         </div>
