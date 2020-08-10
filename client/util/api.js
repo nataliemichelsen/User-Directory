@@ -1,3 +1,9 @@
+import Axios from 'axios';
 
-import React from 'react';
-import Moment from 'react-moment';
+export default {
+    find: function() {
+        return (
+            axios.get('');
+        )
+    }
+}
