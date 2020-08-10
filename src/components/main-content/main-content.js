@@ -28,7 +28,7 @@ class Main extends Component {
           users: res.data.results,
         })
       )
-      .catch(err);
+      .catch(err => console.log(err));
   }
 
   // allows for user to filter & sort results
@@ -81,10 +81,6 @@ class Main extends Component {
     // returning all components being pulled in
     return (
       <div className="main-content">
-        <Nav
-          submitFunction={this.submitFunction}
-          dropdownFunction={this.dropdownFunction}
-        />
         <Container>
           <Row>
             {
