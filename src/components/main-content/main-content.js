@@ -34,24 +34,31 @@ class Content extends Component {
   // allows for user to filter & sort results
   // replaces dropdown, nav, submit functionality
   // connects with values from card & search
-  searchFunction = event => {
+  searchFunction = query => {
     const users = this.state.users;
     const filtered = [];
 
-    if (users) {
-        let name = users[x].name.first.toLowerCase() + " " users[x].name.last.toLowerCase();
-        if (name.includes(event))
+    for(let i in users) {
+        // first & last name
+        let name = users[i].name.first.toLowerCase() 
+        + " " +
+        users[i].name.last.toLowerCase();
+        if(name.includes(query) 
         ||
-        users[x].email.includes(event)
+        // email
+        users[i].email.includes(query) 
         ||
-        users[x].phone.includes(event)  
+        // phone
+        users[i].phone.includes(query) 
         ||
-        users[x].dob.includes(event)
+        // dob
+        users[i].dob.date.includes(query))
+        // push users data
         {
-            
+            filtered.push(users[i])
         }
     }
-
+    // set state of filtered results
     this.setState({
         results: filtered
     })
