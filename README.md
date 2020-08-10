@@ -1,7 +1,5 @@
 # User-Directory
 
-**To see this site live on Heroku, click [here]().**
-
 ## **Table of Contents**
 
 * Project Description
