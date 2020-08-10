@@ -54,10 +54,41 @@ class Main extends Component {
         }
         // timeout to search by phone, name, or dob
         setTimeout(() => {
-            if (value) {
-                
+            // set new param employee for search filters using value match
+            if (value.match(/[0-9]/gi)) {
+                filtered = array.filter(employee =>
+                    // phone
+                        employee.phone.includes(value) 
+                        || 
+                    // date
+                        employee.dob.date.includes(value)
+                        ||
+                    // age
+                        employee.dob.age.toString().includes(value)
+                    );
+            // keep name separate under else statement (use as default)
             } else {
+                filtered = array.filter(employee =>
+                    // first name
+                        employee.name.first.toLowerCase().includes(value.toLowerCase())
+                        ||
+                    // last name
+                        employee.name.last.toLowerCase().includes(value)
+                    );
+            }
 
+            // setting filter state
+            if (value !== '' && filtered.length !==0) {
+                this.setState({results: filtered});
+            // setting default vs. filter
+            } else {
+                // setting default results if no filter used (default)
+                if (!this.state.sorted) {
+                    this.setState({results: this.state.resultsAll})
+                // setting search results if sort filter is used
+                } else {
+                    this.setState({restuls: this.setState.sortedResults})
+                }
             }
         });
     };
@@ -105,6 +136,7 @@ render() {
             <Container>
                 <Row>
                     {
+                        // map new param employees & match to card props
                         results.map((employees, x) => (
                             <Column key={x}>
                                 <Card
