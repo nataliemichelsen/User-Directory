@@ -3,14 +3,15 @@ import React, { Component } from "react";
 import API from "../../util/api";
 
 // will use these to connect all components below
-import Nav from "../nav/nav";
-import Row from "../row/row";
-import Column from "../column/column";
-import Card from "../card/card";
-import Container from "../container/container";
+import Nav from "../nav/Nav";
+import Row from "../row/Row";
+import Column from "../column/Column";
+import Card from "../card/Card";
+import Container from "../container/Container";
+import Search from "../search/Search";
 
 // class for entire page - connects other components
-class Main extends Component {
+class Content extends Component {
     state = {
         resultsAll: [],
         sortedResults: [],
@@ -87,7 +88,7 @@ class Main extends Component {
                     this.setState({results: this.state.resultsAll})
                 // setting search results if sort filter is used
                 } else {
-                    this.setState({restuls: this.setState.sortedResults})
+                    this.setState({results: this.setState.sortedResults})
                 }
             }
         });
@@ -116,6 +117,10 @@ class Main extends Component {
             
         }
         // descending order
+        if () {
+            
+        }
+        // default
         if () {
             
         }
