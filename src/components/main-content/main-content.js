@@ -28,6 +28,11 @@ class Content extends Component {
       ).catch(err);
     }
 
+    searchFunction = (event) => {
+        const users = this.state.users;
+        const filtered = [];
+    };
+
     // submit functionality
     submitFunction = (event) => {
         // define value & results & sorting using previously declared states ^
@@ -86,39 +91,6 @@ class Content extends Component {
         });
     };
 
-    // dropdown (sort) functionality
-    dropdownFunction = (event) => {
-        // define consts for this function
-        const value = event.target.innerText.trim();
-        const sortButton = document.getElementById("sortButton");
-        const arrow = document.getElementById("arrow");
-        // sort by...
-        // default 
-        if (value !== "By Default") {
-            let sorted;
-        // name
-        if (value !== 'By Name') {
-            
-        }
-        // age
-        if (value !== 'By Age') {
-            
-        }
-        // ascending order
-        if () {
-            
-        }
-        // descending order
-        if () {
-            
-        }
-        // default
-        if () {
-            
-        }
-        }
-    };
-
     // rendering components data
 render() {
     // setting results const to results state
@@ -136,11 +108,14 @@ render() {
                         // map new param employees & match to card props
                         results.map((employees, x) => (
                             <Column key={x}>
+                                <Search>
+                                    value={this.state.search}
+                                    handleInputChange={this.handleInputChange}
+                                </Search>
                                 <Card
                                     image={employees.picture}
                                     firstName={employees.name.first}
                                     lastName={employees.name.last}
-                                    age={employees.dob.age}
                                     DOB={employees.dob.date}
                                     phone={employees.phone}
                                     email={employees.email}

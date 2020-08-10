@@ -17,8 +17,6 @@ function Card(props) {
           {props.firstName} {props.lastName}
         </p>
 
-        <p className="profile-age text">Age: {props.age}</p>
-
         <p className="profile-dob text">
           Dob:{" "}
           <Moment format="MM/DD/YYYY" className="moment">
