@@ -11,7 +11,7 @@ import Search from "../search/Search";
 
 // class for entire page
 // connects other components
-class Content extends Component {
+class Main extends Component {
   state = {
     results: [],
     sorted: false,
