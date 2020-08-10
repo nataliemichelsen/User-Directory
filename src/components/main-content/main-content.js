@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import API from "../../util/api";
 
 // will use these to connect all components below
-import Nav from "../nav/Nav";
 import Row from "../row/Row";
 import Column from "../column/Column";
 import Card from "../card/Card";
@@ -13,27 +12,20 @@ import Search from "../search/Search";
 // class for entire page - connects other components
 class Content extends Component {
     state = {
-        resultsAll: [],
-        sortedResults: [],
         results: [],
         sorted: false,
-        name: false,
-        age: false,
+        search: ""
     };
 
     // component mounting
     componentDidMount() {
-        const arrow = document.getElementById("arrow");
-        arrow.style.display = "none";
-
         // target API then set states of results / sorting
-        API.find().then((res) => {
-            this.setState({
-                resultsAll: res.data.results,
-                sortedResults: res.data.results,
-                results: res.data.results,
-            });
-        });
+        API.list()
+        .then(res => this.setState({ 
+          result: res.data.results,
+          users:res.data.results
+        })
+      ).catch(err);
     }
 
     // submit functionality
