@@ -28,52 +28,51 @@ class Main extends Component {
           users: res.data.results,
         })
       )
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }
 
   // allows for user to filter & sort results
   // replaces dropdown, nav, submit functionality
   // connects with values from card & search
-  searchFunction = query => {
+  searchFunction = (query) => {
     const users = this.state.users;
     const filtered = [];
 
-    for(let i in users) {
-        // first & last name
-        let name = users[i].name.first.toLowerCase() 
-        + " " +
+    for (let i in users) {
+      // first & last name
+      let name =
+        users[i].name.first.toLowerCase() +
+        " " +
         users[i].name.last.toLowerCase();
-        if(name.includes(query) 
-        ||
+      if (
+        name.includes(query) ||
         // email
-        users[i].email.includes(query) 
-        ||
+        users[i].email.includes(query) ||
         // phone
-        users[i].phone.includes(query) 
-        ||
+        users[i].phone.includes(query) ||
         // dob
-        users[i].dob.date.includes(query))
+        users[i].dob.date.includes(query)
+      ) {
         // push users data
-        {
-            filtered.push(users[i])
-        }
+        filtered.push(users[i]);
+      }
     }
     // set state of filtered results
     this.setState({
-        results: filtered
-    })
+      results: filtered,
+    });
   };
 
   // changes input data based on search function value
   handleInputChange = (event) => {
-    const {name, value} = event.target;
-    this.searchFunction(value)
+    const { name, value } = event.target;
+    this.searchFunction(value);
     this.setState({
-        [name]: value
+      [name]: value,
     });
   };
 
-  // rendering components data
+  c; // rendering components data
   render() {
     // setting results const to results state
     const results = this.state.results;

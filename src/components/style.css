@@ -1,51 +1,27 @@
-.navbar {
-
-}
-.navbar-brand {
-
-}
-.input-group {
-
-}
-.form-control {
-
-}
-.dropdown {
-
-}
-.dropdown-menu {
-
-}
-.dropdown-items {
-
-}
-.dropdown-divider {
-
-}
-.dropdown-button {
-
-}
-.menu-button {
-
-}
-.fas {
-
-}
+/* row.js */
 .row {
 
 }
+
+/* footer.js */
 .footer {
 
 }
 .footer-details {
 
 }
+
+/* container.js */
 .container {
 
 }
+
+/* column.js */
 .column {
 
 }
+
+/* card.js */
 .card {
 
 }
@@ -73,18 +49,18 @@
 .moment {
     
 }
+
+/* search.js */
+.form-group {
+
+}
+.search-function {
+
+}
+
+/* main-content.js */
 .main-content {
     
 }
 
 
-
-
-
-
-#sort-button {
-
-}
-#menu-button {
-
-}
