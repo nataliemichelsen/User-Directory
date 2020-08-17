@@ -9,6 +9,7 @@ import Container from "../container/Container";
 import Search from "../search/Search";
 import Card from "../card/Card"
 import Nav from "../nav/Nav"
+import Footer from "../footer/Footer"
 
 // class for entire page
 // connects other components
@@ -75,19 +76,38 @@ class Main extends Component {
 
   // rendering components data
   render() {
+    const results = this.state.results;
+
     return (
+      <div className='main-content'>
+        <Nav/>
+        <Search
+        value={this.state.search}
+        handleInputChange={this.handleInputChange} />
         <Container>
           <Row>
-            <Column size="md-12">
-              <Search 
-                value={this.state.search}
-                handleInputChange={this.handleInputChange} />
-              <Card data={this.state.result}/>
-            </Column>
+            {
+              results.map((employees, i) => (
+                <Column key={i} size="col-lg-8">
+                  <Card
+                    image={employees.picture.large}
+                    firstName={employees.name.first}
+                    lastName={employees.name.last}
+                    DOB={employees.dob.date}
+                    phoneNum={employees.phone}
+                    email={employees.email}
+                  />
+                </Column>
+              ))
+            }
           </Row>
         </Container>
-    );
+        <Footer/>
+      </div>
+
+    )
   }
 }
+
 
 export default Main;
