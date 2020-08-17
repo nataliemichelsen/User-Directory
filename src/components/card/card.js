@@ -6,7 +6,6 @@ import "../style.css";
 function Card(props) {
   return (
     <div className="card">
-      <div className="card-body">
         <img
           className="profile-image"
           src={props.image}
@@ -29,7 +28,6 @@ function Card(props) {
         <a className="profile-email" href={`mailto:${props.email}`}>
           {props.email}
         </a>
-      </div>
     </div>
   );
 }

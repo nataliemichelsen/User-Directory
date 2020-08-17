@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
 import API from "../../util/api";
+import "../style.css";
 
 // will use these to connect all components below
 import Row from "../row/Row";
@@ -41,9 +41,9 @@ class Main extends Component {
     for (let i in users) {
       // first & last name
       let name =
-        users[i].name.first.toLowerCase() +
+        users[i].name.firstName.toLowerCase() +
         " " +
-        users[i].name.last.toLowerCase();
+        users[i].name.lastName.toLowerCase();
       if (
         name.includes(query) ||
         // email
@@ -72,40 +72,19 @@ class Main extends Component {
     });
   };
 
-  c; // rendering components data
+  // rendering components data
   render() {
-    // setting results const to results state
-    const results = this.state.results;
-
-    // returning all components being pulled in
     return (
-      <div className="main-content">
         <Container>
           <Row>
-            {
-              // map new param employees
-              // bring in search values
-              // match to card props
-              results.map((employees, x) => (
-                <Column key={x}>
-                  <Search>
-                    value={this.state.search}
-                    handleInputChange={this.handleInputChange}
-                  </Search>
-                  <Card
-                    image={employees.picture}
-                    firstName={employees.name.first}
-                    lastName={employees.name.last}
-                    DOB={employees.dob.date}
-                    phone={employees.phone}
-                    email={employees.email}
-                  />
-                </Column>
-              ))
-            }
+            <Column size="md-12">
+              <Search 
+                value={this.state.search}
+                handleInputChange={this.handleInputChange} />
+              <Card data={this.state.result}/>
+            </Column>
           </Row>
         </Container>
-      </div>
     );
   }
 }
