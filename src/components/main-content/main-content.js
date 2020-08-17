@@ -5,9 +5,10 @@ import "../style.css";
 // will use these to connect all components below
 import Row from "../row/Row";
 import Column from "../column/Column";
-import Card from "../card/Card";
 import Container from "../container/Container";
 import Search from "../search/Search";
+import Card from "../card/Card"
+import Nav from "../nav/Nav"
 
 // class for entire page
 // connects other components
