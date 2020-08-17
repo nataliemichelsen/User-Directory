@@ -16,6 +16,7 @@ import Footer from "../footer/Footer"
 class Main extends Component {
   state = {
     results: [],
+    users: [],
     sorted: false,
     search: "",
   };
@@ -26,7 +27,7 @@ class Main extends Component {
     API.list()
       .then((res) =>
         this.setState({
-          result: res.data.results,
+          results: res.data.results,
           users: res.data.results,
         })
       )
@@ -37,26 +38,26 @@ class Main extends Component {
   // replaces dropdown, nav, submit functionality
   // connects with values from card & search
   searchFunction = (query) => {
-    const users = this.state.users;
+    const data = this.state.data;
     const filtered = [];
 
-    for (let i in users) {
+    for (let i in data) {
       // first & last name
       let name =
-        users[i].name.firstName.toLowerCase() +
+        data[i].name.firstName.toLowerCase() +
         " " +
-        users[i].name.lastName.toLowerCase();
+        data[i].name.lastName.toLowerCase();
       if (
         name.includes(query) ||
         // email
-        users[i].email.includes(query) ||
+        data[i].email.includes(query) ||
         // phone
-        users[i].phone.includes(query) ||
+        data[i].phone.includes(query) ||
         // dob
-        users[i].dob.date.includes(query)
+        data[i].dob.date.includes(query)
       ) {
-        // push users data
-        filtered.push(users[i]);
+        // push data data
+        filtered.push(data[i]);
       }
     }
     // set state of filtered results
@@ -66,13 +67,20 @@ class Main extends Component {
   };
 
   // changes input data based on search function value
-  handleInputChange = (event) => {
-    const { name, value } = event.target;
-    this.searchFunction(value);
-    this.setState({
-      [name]: value,
+  handleInputChange = event => {
+    console.log(event.target.value);
+    const filter = event.target.value;
+    const filteredList = this.state.users.filter(item => {
+      // merge data together, then see if user input is anywhere inside
+      var values = Object.values(item)
+        .join("")
+        .toLowerCase();
+        console.log(values)
+      return values.indexOf(filter.toLowerCase()) !== -1;
     });
-  };
+    this.searchFunction(filteredList);
+    this.setState({ results: filteredList });
+  }
 
   // rendering components data
   render() {
@@ -82,7 +90,7 @@ class Main extends Component {
       <div className='main-content'>
         <Nav/>
         <Search
-        value={this.state.search}
+        value={this.state.value}
         handleInputChange={this.handleInputChange} />
         <Container>
           <Row>
@@ -104,10 +112,8 @@ class Main extends Component {
         </Container>
         <Footer/>
       </div>
-
     )
   }
 }
-
 
 export default Main;
