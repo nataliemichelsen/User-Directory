@@ -3,13 +3,13 @@ import API from "../../util/api";
 import "../style.css";
 
 // will use these to connect all components below
-import Row from "../row/Row";
-import Column from "../column/Column";
-import Container from "../container/Container";
-import Search from "../search/Search";
-import Card from "../card/Card"
-import Nav from "../nav/Nav"
-import Footer from "../footer/Footer"
+import Row from "../row/row";
+import Column from "../column/column";
+import Container from "../container/container";
+import Search from "../search/search";
+import Card from "../card/card"
+import Nav from "../nav/nav"
+import Footer from "../footer/footer"
 
 // class for entire page
 // connects other components
