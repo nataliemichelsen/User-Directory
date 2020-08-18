@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/nataliemichelsen/User-Directory/static/css/main.a3d9229d.chunk.css",
+    "main.js": "/nataliemichelsen/User-Directory/static/js/main.ea386014.chunk.js",
+    "main.js.map": "/nataliemichelsen/User-Directory/static/js/main.ea386014.chunk.js.map",
+    "runtime-main.js": "/nataliemichelsen/User-Directory/static/js/runtime-main.34114ce9.js",
+    "runtime-main.js.map": "/nataliemichelsen/User-Directory/static/js/runtime-main.34114ce9.js.map",
+    "static/js/2.9ad0d283.chunk.js": "/nataliemichelsen/User-Directory/static/js/2.9ad0d283.chunk.js",
+    "static/js/2.9ad0d283.chunk.js.map": "/nataliemichelsen/User-Directory/static/js/2.9ad0d283.chunk.js.map",
+    "index.html": "/nataliemichelsen/User-Directory/index.html",
+    "precache-manifest.d61885368348b57c30a8d8bc9d104e85.js": "/nataliemichelsen/User-Directory/precache-manifest.d61885368348b57c30a8d8bc9d104e85.js",
+    "service-worker.js": "/nataliemichelsen/User-Directory/service-worker.js",
+    "static/css/main.a3d9229d.chunk.css.map": "/nataliemichelsen/User-Directory/static/css/main.a3d9229d.chunk.css.map",
+    "static/js/2.9ad0d283.chunk.js.LICENSE.txt": "/nataliemichelsen/User-Directory/static/js/2.9ad0d283.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.34114ce9.js",
+    "static/js/2.9ad0d283.chunk.js",
+    "static/css/main.a3d9229d.chunk.css",
+    "static/js/main.ea386014.chunk.js"
+  ]
+}
