@@ -6,10 +6,10 @@ import "../style.css";
 import Row from "../row/row";
 import Column from "../column/column";
 import Container from "../container/container";
-import Search from "../search/search";
+import Search from "../search/Search";
 import Card from "../card/card"
-import Nav from "../nav/nav"
-import Footer from "../footer/footer"
+import Nav from "../nav/Nav"
+import Footer from "../footer/Footer"
 
 // class for entire page
 // connects other components
